@@ -7,13 +7,12 @@
 </head>
 
 <body background="bag.jpg">
-	
-		<?php		
 		<p id="demo"></p>
 		<p><b>Note: </b>If port number is default, most browers will display 0 or nothing.</p>
 		<script>
 		document.getElementById("demo").innerHTML =
 		"The port number of the current page is:" +window.location.port;</script>
+		<?php
 		
 		function test_input($data) {
 			$data = trim($data);
@@ -122,13 +121,13 @@
 		<p><span class="error">* required field.</span></p>
 		<form autocomplete="off" method = "POST" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 		<table align="center">
-		<tr><td>Username:</td> <td><input type="text" name="user" <?php echo $username;?>/>
+		<tr><td>Username:</td> <td><input type="text" name="user" placeholder="Username"<?php echo $username;?>/>
 		<span class="error">* <?php echo $usererr;?></span><br/></td></tr>
-		<tr><td>Password:</td> <td><input type="password" name="pass"<?php echo $pwd;?> />
+		<tr><td>Password:</td> <td><input type="password" name="pass" placeholder="Password"<?php echo $pwd;?> />
 		<span class="error">* <?php echo $passerr;?></span><br/></td></tr>
-		<tr><td>Full Name:</td> <td><input type="text" name="name"<?php echo $fullname;?> />
+		<tr><td>Full Name:</td> <td><input type="text" name="name" placeholder="Full name"<?php echo $fullname;?> />
 		<span class="error">* <?php echo $nameerr;?></span><br/></td></tr>
-		<tr><td>E-mail address:</td> <td><input type="text" name="email" <?php echo $email;?>/>
+		<tr><td>E-mail address:</td> <td><input type="text" name="email" placeholder="E-mail"<?php echo $email;?>/>
 		<span class="error">* <?php echo $emailerr;?></span><br/></td></tr>
 		<tr><td><input type="submit" value="Submit"></td></tr>		
 		</table></form>
