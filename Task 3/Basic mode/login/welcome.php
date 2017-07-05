@@ -8,9 +8,9 @@
    </head>
    
    <body>
-      <h1>Welcome <?php echo $_SESSION['user_fullname']; ?></h1> 
-	<h2>Your email address is <?php echo $_SESSION['user_email']; ?></h2><br/>       
-	<h2><a href = "logout.php">Sign Out</a></h2>
+      <h4>Welcome <?php echo $_SESSION['user_fullname']; ?></h4> 
+	<h4>Your email address is <?php echo $_SESSION['user_email']; ?></h4><br/>       
+	<h5><a href = "logout.php">Sign Out</a></h5>
    </body>
    
 </html>
