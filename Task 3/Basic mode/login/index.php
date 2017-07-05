@@ -17,7 +17,7 @@
 	$pass = ($_POST['password']);
 	$hsdpass = sha1($lpass);
       
-      	$sql = "SELECT * FROM userTable WHERE userName = '$user' and password = '$pass'";
+      	$sql = "SELECT * FROM userTable WHERE userName = '$user' and password = '$hsdpass'";
       	$result = $conn->query($sql);
       
       	$count = $result->num_rows;
