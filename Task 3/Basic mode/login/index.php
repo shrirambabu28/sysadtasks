@@ -6,31 +6,29 @@
 	<body background="af.jpg">
 
 <?php		
-
 	include("config.php");
-   	session_start();
+	session_start();
    
   	if($_SERVER["REQUEST_METHOD"] == "POST") {
         // username and password recieved from the registration form.
       
       	$user = ($_POST['username']); 
 	$pass = ($_POST['password']);
-	$hsdpass = sha1($lpass);
+	$hsdpass = sha1($pass);
       
       	$sql = "SELECT * FROM userTable WHERE userName = '$user' and password = '$hsdpass'";
       	$result = $conn->query($sql);
+        $count = $result->num_rows;
       
-      	$count = $result->num_rows;
-      
-	if($count == 1) {
+	if($count == 0) {
+	$error = "Your Login Name or Password is invalid";
+	
+      }else {
 	$row = $result->fetch_assoc();
-  
-        $_SESSION['user_fullname'] = $row['full_name'];
+  	$_SESSION['user_fullname'] = $row['full_name'];
 	$_SESSION['user_email'] = $row['email'];
          
-        header("location: welcome.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
+        header("location: welcome.php");         
       }
    }
 ?>
